@@ -1,4 +1,4 @@
-# Projet-web
+# Projet-web - Social Media
 
 Structure du projet :
 
