@@ -51,3 +51,4 @@ SQL (sql/) : Contient les scripts pour la création et le peuplement initial de 
 Images (img/) : Toutes les images utilisées dans le projet sont stockées ici.
 Polices (fonts/) : Pour les polices personnalisées (si utilisées).
 Audio (audio/) : Dossier pour stocker les fichiers audio (si nécessaire).
+bonjour
