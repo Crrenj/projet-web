@@ -1,0 +1,97 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #C0DCC0;
+            padding: 10px;
+            color: #408080;
+            font-size: 20px;
+            width: 70%
+            text-align: center;
+        }
+        section {
+            margin-top: 20px;
+        }
+        .event {
+            border: 1.3px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .message {
+            border: 1.3px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .demande {
+            border: 1.3px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+
+        }
+
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            align-items: center; /* Alignement vertical */
+        }
+        .text {
+            padding-left: 20px; /* Marge à gauche pour séparer l'image du texte */
+        }
+        .logo {
+            max-width: 100%; /* Assure que l'image ne dépasse pas de son conteneur */
+            height: auto; /* Maintient le rapport hauteur/largeur de l'image */
+        }
+
+        .logo {
+            border-radius: 9px; /* Ajustez la valeur du rayon selon vos préférences */
+        }
+
+        .logo {
+            position: fixed; /* La position de l'image est fixée par rapport à la fenêtre du navigateur */
+            top: 40px; /* Distance du haut de la page */
+            right: 40px; /* Distance du côté droit de la page */
+            /* Vous pouvez également utiliser left ou bottom pour changer le coin de l'image */
+        }
+        .ami{
+            width: 130px;
+            height: 90px;
+            border-radius: 25px;
+            float: left;
+        }
+      
+
+        .ecejpo {
+            float: left;
+        }
+        
+        }
+        .couleurdoublediplome {
+            color : #005050;
+        }
+        
+        
+        .demandeami{
+            color : #005050;
+        }
+        .accepter{
+            color : #008000;
+        }
+        .refuser{
+            color : #FF0000;
+        }
+        .boite{
+            color :#005050;
+        }
+        .Evenements{
+            color :#005050;
+        }
+    </style>
