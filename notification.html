@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="notification.css" rel="stylesheet" type="text/css" />
+    <title>Notifications ECE</title>
+</head>
+<body>
+    <header>
+        <h3>ECE In : Social Media Professionnel de l'ECE Paris</h3>
+        <h3>Notification</h3>
+        <img src="ecelinkedin.jpg" width="140" height="150" class="logo"></img>
+    </header>
+    <section>
+
+        <h3 class="demandeami"><u>Demande d'ami</u></h3>
+        <div class="demande" id="demande">
+            <img src="profil.jpg" alt="Photo de profil">
+            <p>Vous avez une demande d'ami de [nom] [prénom] reçue le [date] <br>
+            <button id="ajouterAmi" class="accepter" onclick="supprimerDemande()">Accepter</button>
+            <button id="refuserAmi" class="refuser" onclick="supprimerDemande()">Refuser</button>
+        </div>
+        <br>
+
+            <h3 class="boite"><u>Boîte de réception</u></h3>
+        <div class="message">
+            <p>Vous avez reçu un message de [nom] [prénom] reçu le [date] <br>
+                <button id="Répondre" class="Répondre" onclick="redirigerVersMessagerie">Répondre</button>
+        </div>
+        <br>
+
+            <h3 class="Evenements"><u>Evenements</u></h3>
+        <div class="event" id="event">
+            <p>Nouvel événement [nom de l'evenement] le [date] à [adresse]
+            <br>
+            <br>
+            <button onclick="supprimerContenu()">Compris</button>
+        </div>
+    </section>
+
+</body>
+</html>
