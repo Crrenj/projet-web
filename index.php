@@ -137,7 +137,111 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
+
+		<div id="event">
+			<div id="event_friend">
+				<div class="container-fluid">
+					<h1>Evénement de t'es amis</h1>
+				</div>
+				<div class="container-fluide">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div>
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div>
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div><h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div id="event_perso">
+				<div class="container-fluid">
+					<h1>Evénement personnel</h1>
+				</div>
+				<div class="container-fluide">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div>
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div>
+									<h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
+								<img src="img/logo/logo_simple.png" class="card-img-top" alt="...">
+								<div class="card-body text-primary">
+									<div class="card-header">Header</div><h5 class="card-title">Special title treatment</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text"><small>Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Google-contact">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.3909119356854!2d2.2882762184060494!3d48.850755695681165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris!5e0!3m2!1sen!2sfr!4v1702754388336!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+					<div class="col">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	
 </body>
 </html>
