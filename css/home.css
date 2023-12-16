@@ -1,4 +1,22 @@
 #section {
-	margin: 20px;
+	margin: 30px;
 
+}
+
+#event{
+	align-content: center;
+
+}
+
+#event_friend {
+	margin: 20px;
+}
+
+#event_perso {
+	margin: 20px;
+}
+
+#Google-contact {
+	align-content: center;
+	margin: 20px;
 }

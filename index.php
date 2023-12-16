@@ -143,7 +143,7 @@
 				<div class="container-fluid">
 					<h1>Evénement de t'es amis</h1>
 				</div>
-				<div class="container-fluide">
+				<div class="container">
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="card text-bg-dark border-primary mb-3" style="width: 18rem;">
@@ -183,7 +183,7 @@
 			</div>
 
 			<div id="event_perso">
-				<div class="container-fluid">
+				<div class="container">
 					<h1>Evénement personnel</h1>
 				</div>
 				<div class="container-fluide">
