@@ -16,23 +16,27 @@
             margin-top: 20px;
         }
         .event {
-            border: 1.3px solid gray;
+            border: 1.4px solid gray;
             padding: 10px;
             margin-bottom: 10px;
-
+            border-radius: 10px;
+            background-color: #C0DCC0;
         }
 
         .message {
-            border: 1.3px solid gray;
+            border: 1.4px solid gray;
             padding: 10px;
             margin-bottom: 10px;
-
+            border-radius: 10px;
+            background-color: #C0DCC0;
         }
 
         .demande {
-            border: 1.3px solid gray;
+            border: 1.4px solid gray;
             padding: 10px;
             margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: #C0DCC0;
 
         }
 
@@ -86,12 +90,15 @@
             color : #008000;
         }
         .refuser{
-            color : #FF0000;
+            color : #FF0000;   
+        }
+        .voirAutreDeamndeAmi{
+            color : #28547E;
         }
         .boite{
             color :#005050;
         }
-        .Evenements{
+        .evenements{
             color :#005050;
         }
     </style>
