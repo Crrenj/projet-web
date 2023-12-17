@@ -18,7 +18,12 @@
             font-family: Arial, sans-serif;
         }
         .wrapper {
-
+            display: grid;
+            grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
         }
         header {
             grid-area: header;
@@ -181,7 +186,6 @@
             <option value="">Filtrer par...</option>
             <option value="age">Nom</option>
             <option value="sexe">Prénom</option>
-            <!-- Autres options de filtrage -->
         </select>
     </nav>
     <main>
@@ -197,14 +201,9 @@
                 }
                 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
-                $sql = "SELECT * FROM Relation WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'"; // changer sql
+                $sql = "SELECT * FROM Relation WHERE ID_Utilisateur1 LIKE '%$searchTerm%'";
 
-                if ($filter == "age") {
-                    $sql .= " ORDER BY Age"; // Exemple, ajustez selon votre structure de base de données
-                } elseif ($filter == "sexe") {
-                    $sql .= " ORDER BY Sexe"; // Exemple, ajustez selon votre structure de base de données
-                }
-                $sql = "SELECT * FROM Relation WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'"; //changer sql
+                $sql = "SELECT * FROM Relation WHERE ID_Utilisateur1 LIKE '%$searchTerm%'";
                 $result = mysqli_query($db_handle, $sql);
                 if ($result) {
                     while ($data = mysqli_fetch_assoc($result)) {
@@ -213,10 +212,10 @@
                         echo "<img src='" . $data['Photo'] . "' alt='Photo de " . $data['Prenom'] . "'>";
                         echo "</a>";
                         echo "<div>";
-                        echo "<p>" . $data['Nom'] . " " . $data['Prenom'] . "</p>";
+                        echo "<p>" . $data['ID_Utilisateur1'] . "</p>";
                         echo "<p>" . $data['Description'] . "</p>";
                         echo "<form method='post' action='supprimer_ami.php'>";
-                        echo "<input type='hidden' name='id' value='" . $data['ID'] . "'>";
+                        echo "<input type='hidden' name='id' value='" . $data['ID_Utilisateur1'] . "'>";
                         echo "<button type='submit' name='delete'>Supprimer cet ami</button>";
                         echo "</form>";
                         echo "</div>";
