@@ -72,6 +72,100 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  
 </head>
 <body>
+<div class="navbar data-bs-theme='dark' bg-body-tertiary">
+			<nav class="navbar navbar-dark fixed-top bg-dark">
+			  <div class="container-fluid">
+			    <a class="navbar-brand" href="#">
+			    	<img src="img/logo/LOGO.png" width="50" height="auto"> ECEin
+				</a>
+
+			    <ul class="nav nav-pills nav-fill navbar-left">
+				  <li class="nav-item">
+				    <a class="nav-link" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="jpbs.php"><i class="bi bi-backpack3"></i> Emplois</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="notifications.php"><i class="bi bi-bell-fill"></i> Notification</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="publication.php"><i class="bi bi-journal-album"></i> Publication</a>
+				  </li>
+				</ul>
+
+			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+
+			    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+			      <div class="offcanvas-header">
+			        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="img/logo/LOGO.png" width="50" height="auto"> ECEin</h5>
+			        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			      </div>
+			      <div class="offcanvas-body">
+			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+			          <li class="nav-item dropdown">
+			            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			              Navigation
+			            </a>
+			            <ul class="dropdown-menu dropdown-menu-dark">
+							<li><a class="dropdown-item" href="index.php"><i class="bi bi-house-fill"></i> Home</a></li>
+							<li><a class="dropdown-item" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a></li>
+							<li><a class="dropdown-item" href="network.php"><i class="bi bi-people-fill"></i> Amis</a></li>
+							<li><a class="dropdown-item" href="network.php"><i class="bi bi-people-fill"></i> Amis</a></li>
+							<li><a class="dropdown-item" href="jpbs.php"><i class="bi bi-backpack3"></i> Emplois</a></li>
+							<li><a class="dropdown-item" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a></li>
+							<li><a class="dropdown-item" href="notifications.php"><i class="bi bi-bell-fill"></i> Notification</a></li>
+							<li><a class="dropdown-item" href="publication.php"><i class="bi bi-journal-album"></i> Publication</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+			            </ul>
+			          </li>
+			          <li class="nav-item dropdown">
+			            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			              Reseaux sociaux
+			            </a>
+			            <ul class="dropdown-menu dropdown-menu-dark">
+							<li><a class="dropdown-item" href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+							<li><a class="dropdown-item" href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+							<li><a class="dropdown-item" href="#"><i class="bi bi-twitter-x"></i> Tweeter</a></li>
+			            </ul>
+			        </li>
+				        <li class="nav-item dropdown">
+				        	<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				              Nos partenaires
+				            </a>
+				            <ul class="dropdown-menu dropdown-menu-dark">
+				            	<li>a faire</li>
+				            </ul>
+				        </li>
+				        <li class="nav-item dropdown">
+				        	<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				              nous contacter
+				            </a>
+				            <ul class="dropdown-menu dropdown-menu-dark">
+				            	<li>a faire</li>
+				            </ul>
+				        </li>
+			        </ul>
+			        
+			      </div>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+	
 
 <form action="update.php" method="post">
     Nom: <input type="text" name="nom" value="<?php echo $user_data['Nom']; ?>"><br>
