@@ -43,15 +43,15 @@ LEFT JOIN
 LEFT JOIN 
     competence_interet_langue cil ON cv.ID_CV = cil.ID_CV
 WHERE
-u.user = '$user'"; // Asegúrate de que 'user' sea el campo correcto en la tabla Utilisateur
+u.user = '$user'"; 
 
 $result = mysqli_query($db_handle, $query);
 
 if ($result) {
     $user_data = mysqli_fetch_assoc($result);
-    // Aquí puedes trabajar con los datos de $user_data
+    
 } else {
-    // Manejo de error en caso de que la consulta falle
+  
     echo "Error: " . mysqli_error($db_handle);
 }
 
@@ -73,7 +73,7 @@ if ($result) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="css\profile.css">
-    <!-- Add your CSS link here -->
+    
 </head>
 <body>
   <div id="wrapper">
@@ -88,10 +88,10 @@ if ($result) {
 
           <ul class="nav nav-pills nav-fill navbar-left">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
+            <a class="nav-link" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
+            <a class="nav-link active" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
@@ -174,7 +174,7 @@ if ($result) {
     </div>
 
   <div id="header">
-    <!-- Placeholder for Profile Image -->
+   
     <div id="profile-picture">
         <?php 
         if (isset($user_data['Photo']) && !empty($user_data['Photo'])) {
@@ -185,7 +185,7 @@ if ($result) {
         }
         ?>
     </div>
-    <!-- Placeholder for User Full Name -->
+    
     <h1>
         <?php 
         if (isset($user_data['Nom']) && isset($user_data['Prenom'])) {
@@ -219,10 +219,10 @@ if ($result) {
         <label>Biographie:</label>
         <?php echo isset($user_data['Biographie']) ? $user_data['Biographie'] : ''; ?><br>
     </div>
-            <!-- Add more fields based on the user_data array -->
+          
 
 
-           <!-- Education Section -->
+      
 <section id="education">
     <h2>Formation / Education</h2>
     <?php 
@@ -237,7 +237,6 @@ if ($result) {
     ?>
 </section>
 
-<!-- Experience Section -->
 <section id="experience">
     <h2>Expériences / Stages</h2>
     <?php 
@@ -253,7 +252,7 @@ if ($result) {
     ?>
 </section>
 
-<!-- Projects Section -->
+
 <section id="projects">
     <h2>Projets</h2>
     <?php 
@@ -267,11 +266,7 @@ if ($result) {
 </section>
 
 
-            
-          
-
-
-            <!-- Skills Section -->
+        
             <section id="skills">
                 <h2>Compétences</h2>
                 <div class="skills-entry">
@@ -281,7 +276,7 @@ if ($result) {
                 </div>
             </section>
 
-            <!-- Languages Section -->
+          
             <section id="languages">
                 <h2>Langues</h2>
                 <div class="languages-entry">
@@ -291,7 +286,7 @@ if ($result) {
                 </div>
             </section>
 
-            <!-- Interests Section -->
+           
             <section id="interests">
                 <h2>Intérêt</h2>
                 <div class="interests-entry">
@@ -314,7 +309,56 @@ if ($result) {
         </form>
     </div>
   </div>
+<footer class="container-fluid bg-dark">
+            <div class="container py-4 py-md-5 px-4 px-md-3 text-light-emphasis">
+                <div class="row px-4 py-4">
+                    <div class="col">
+                        <img src="img/logo/LOGO.png" width="150" height="auto">
+                    </div>
+                    <div class="col">
+                        <h5>Aide</h5>
+                        <ul class="list-unstyled">
+                            <li>email:henri.lantigua@edu.fr</li>
+                            <li>tel:06 XX XX XX XX</li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Formulaire d'aide</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5>Nos réseaux sociaux</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-instagram"></i> Instagram</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-twitter-x"></i> tweeter/X</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acceuil</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Profil</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Messagerie</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Notification</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Publication</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Emploi</a></li>
+                            <li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Amis</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5>Auteur</h5>
+                        <ul class="list-unstyled">
+                            <p>
+                                Henri Lantigua Jorge
+                                Claudia Andrea Sotomayor Michuy
+                                Piriya
+                                Sami
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    
 </body>
 </html>
-
-

@@ -56,13 +56,13 @@
 				    <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="jpbs.php"><i class="bi bi-backpack3"></i> Emplois</a>
+				    <a class="nav-link" href="emploi.html"><i class="bi bi-backpack3"></i> Emplois</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="notifications.php"><i class="bi bi-bell-fill"></i> Notification</a>
+				    <a class="nav-link" href="notification.html"><i class="bi bi-bell-fill"></i> Notification</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="publication.php"><i class="bi bi-journal-album"></i> Publication</a>
@@ -141,39 +141,55 @@
 						<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
 					</div>
 					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="img/carousel/fjords.jpg" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block">
-								<h5>First slide label</h5>
-								<p>Some representative placeholder content for the first slide.</p>
-							</div>
-						</div>
-							<div class="carousel-item">
-								<img src="img/carousel/nature.jpg" class="d-block w-100" alt="...">
-								<div class="carousel-caption d-none d-md-block">
-									<h5>Second slide label</h5>
-									<p>Some representative placeholder content for the second slide.</p>
-								</div>
-							</div>
-						<div class="carousel-item">
-							<img src="img/carousel/lights.jpg" class="d-block w-100" alt="...">
-							<div class="carousel-caption d-none d-md-block">
-								<h5>Third slide label</h5>
-								<p>Some representative placeholder content for the third slide.</p>
-							</div>
-						</div>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
+						<?php
+
+
+						$database = "database";
+
+						$db_handle = mysqli_connect('localhost', 'root', 'root', $database, 8889 );
+					    $db_found = mysqli_select_db($db_handle, $database);
+
+					    $sql = "";
+
+					    if ($db_found) {
+					    	$sql = "SELECT * From Publication Where type = 'eventschool'";
+							$result = mysqli_query($db_handle, $sql);
+
+							if (!$result) {
+							    die("Error in SQL query: " . mysqli_error($db_handle));
+							}
+
+							$data = mysqli_fetch_assoc($result);
+							echo "<div class='carousel-item active'>
+									<img src='" . $data['Image'] . "' class='d-block w-100'>
+									<div class='carousel-caption d-none d-md-block'>
+										<h5>" . $data['Type'] . "</h5>
+										<p>" . $data['Contenu'] . "</p>
+									</div>
+								</div>";
+
+							$data = mysqli_fetch_assoc($result);
+							echo "<div class='carousel-item '>
+									<img src='" . $data['Image'] . "' class='d-block w-100'>
+									<div class='carousel-caption d-none d-md-block'>
+										<h5>" . $data['Type'] . "</h5>
+										<p>" . $data['Contenu'] . "</p>
+									</div>
+								</div>";
+
+							$data = mysqli_fetch_assoc($result);
+							echo "<div class='carousel-item '>
+									<img src='" . $data['Image'] . "' class='d-block w-100'>
+									<div class='carousel-caption d-none d-md-block'>
+										<h5>" . $data['Type'] . "</h5>
+										<p>" . $data['Contenu'] . "</p>
+									</div>
+								</div>";
+					    }
+					    ?>
+					</div>		
 				</div>
 			</div>
-
 			<div id="event">
 				<div id="event_friend" class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
 					<div class="container-fluid">
@@ -435,8 +451,5 @@
 			</div>
 		</footer>
 	</div>
-	<?php 
-	echo "$user<br>$admin";
-	?>
 </body>
 </html>
