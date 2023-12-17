@@ -27,9 +27,9 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if(?)
 
-$sql = "SELECT utilisateur.Nom, utilisateur.Prenom, demande_ami.Contenu
-            FROM demande_ami
-            JOIN utilisateur ON demande_ami.ID_Expéditeur = utilisateur.ID_Utilisateur
-            WHERE demande_ami.ID_Demande = ?";
+$sql = "SELECT utilisateur.Nom, utilisateur.Prenom, notification.Contenu, notification.type
+            FROM Utilisateur
+            JOIN notification ON demande_ami.ID_Expéditeur = utilisateur.ID_Utilisateur
+            WHERE type=demandeAmi";
 
 ?>
