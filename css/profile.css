@@ -1,0 +1,382 @@
+body { 
+  font-family: Arial,
+  sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing:
+  border-box;
+}
+
+<!-- Partie d images de profile, banner et nom -->
+
+.header { 
+  position: relative;
+  margin-bottom: 20px;
+  padding-top: 50px; 
+}
+
+.banner, .profile-pic-container {
+  cursor: pointer; 
+}
+
+.banner { 
+  background: url('path_to_banner_image.jpg') no-repeat center center;
+  background-size: cover;
+  height: 270px; 
+}
+
+.banner:hover .edit-overlay, .profile-pic-container:hover .edit-overlay { 
+  display: flex; }
+
+.profile-pic-container { 
+  position: absolute; 
+  top: 50%; 
+  left: 20px; 
+  transform: translateY(-50%); 
+  width: 150px;
+  height: 150px; 
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px black; 
+  overflow: hidden;
+  }
+
+    .profile-pic {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    object-fit: cover;
+  }
+
+    .edit-overlay { 
+      display: none; 
+      position: absolute; 
+      top: 0; left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.5);
+      color: #fff; 
+      justify-content: center; 
+      text-align: center ;
+      align-items: center; 
+      font-size: 1em; 
+    }
+
+    .name { 
+    position: absolute; 
+    bottom: 15px; 
+    left: 165px; 
+    width: calc(100% - 170px); 
+    font-size: 36px; 
+    font-weight: bold;
+    padding: 10px 20px; 
+    
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    color: #000; 
+    text-shadow: 
+      -1px -1px 0 #fff,  
+       1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+       1px 1px 0 #fff; 
+  }
+
+
+    .edit-name-icon { display: none; 
+                     margin-left: 10px; 
+                     font-size: 0.55em;
+                    }
+
+    .name:hover .edit-name-icon { 
+      display: inline; 
+      }
+
+    .popup { 
+      display: none; 
+      position: fixed; 
+      left: 50%; 
+      top: 50%; 
+      transform: translate(-50%, -50%); 
+      background: #fff; padding: 20px; 
+      border: 1px solid #ddd; 
+      z-index: 10; 
+    }
+
+    .popup button { 
+      margin-top: 10px; 
+      }
+
+
+<!-- Partie d information generale -->
+
+     .formulario-general {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .formulario-general .campo {
+    margin-bottom: 10px;
+  }
+
+  .formulario-general label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .formulario-general span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .iconos {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .iconos img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+  #popup-editar,#popup-seguridad {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    max-width: 500px; 
+    min-width: 300px; 
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 100;
+  }
+
+  #popup-editar input, #popup-editar button, #popup-seguridad button {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #popup-seguridad ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #popup-seguridad li {
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+
+  #popup-seguridad li.selected {
+    background-color: #007bff;
+    color: white;
+  }
+
+#popup-editar {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  max-width: 500px;
+  min-width: 300px;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+#popup-editar input[type="text"],#popup-editar input[type="email"], #popup-editar input[type="tel"], #popup-editar textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#popup-editar textarea {
+  height: 300px; 
+}
+
+#popup-editar button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#popup-editar .btn-guardar {
+  background-color: #007bff;
+  color: white;
+}
+
+#popup-editar .btn-cancelar {
+  background-color: #ccc;
+  color: #333;
+  margin-left: 10px;
+}
+
+#popup-editar .form-buttons {
+  text-align: right;
+}
+
+#popup-editar button:hover {
+  opacity: 0.8;
+}
+
+#popup-editar button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,76,153,0.5);
+}
+
+
+<!-- Partie d information proffesional -->
+
+
+.information-section {
+  display: flex; 
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.section,
+.sidebar-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.section-title,
+.sidebar-title {
+  order: 2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sidebar {
+  flex: 1; 
+  padding-right: 20px; 
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+.main-sections {
+  flex: 2; 
+  position: relative;
+  padding-top: 10px;
+}
+
+    .edit-icons {
+      order: 1;
+      position: absolute;
+      top: 580px;
+      right: 30px;
+     
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .edit-icon, .privacy-icon {
+      cursor: pointer;
+      display: none;
+      width: 20px;
+      height: 20px;
+    }
+
+    .is-visible {
+      display: inline-block; 
+    }
+
+    .more-options-icon {
+  cursor: pointer;
+  width: 20px; 
+  height: 20px; 
+ 
+}
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+  max-width: 800px; 
+  min-width: 500px;  
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,.5);
+      display: none;
+    }
+
+    .popup label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .popup textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 5px;
+    }
+
+    .popup button {
+      margin-top: 20px;
+    }
+
+
+    #privacy-information-popup {
+  width: 50%;
+  min-width: 250px;
+}
+
+#privacy-information-popup label {
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#privacy-information-popup input[type="radio"]:checked + label {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+#privacy-information-popup input[type="radio"] {
+  display: none;
+}
+
+#privacy-information-popup button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #888;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#privacy-information-popup button:hover {
+  background: #555;
+}
