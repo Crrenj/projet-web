@@ -56,13 +56,13 @@
 				    <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="jpbs.php"><i class="bi bi-backpack3"></i> Emplois</a>
+				    <a class="nav-link" href="emploi.html"><i class="bi bi-backpack3"></i> Emplois</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="notifications.php"><i class="bi bi-bell-fill"></i> Notification</a>
+				    <a class="nav-link" href="notification.html"><i class="bi bi-bell-fill"></i> Notification</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="publication.php"><i class="bi bi-journal-album"></i> Publication</a>

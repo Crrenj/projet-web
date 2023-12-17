@@ -84,7 +84,7 @@
     </nav>
     <main>
         <?php
-        $database = "Mon Réseau";
+        $database = "database";
         $db_handle = mysqli_connect('localhost', 'root', 'root', $database, 8889);
         $searchTerm = '';
         if ($db_handle) {
@@ -95,14 +95,14 @@
                 }
                 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
-                $sql = "SELECT * FROM amis WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'";
+                $sql = "SELECT * FROM Relation WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'"; // changer sql
 
                 if ($filter == "age") {
                     $sql .= " ORDER BY Age"; // Exemple, ajustez selon votre structure de base de données
                 } elseif ($filter == "sexe") {
                     $sql .= " ORDER BY Sexe"; // Exemple, ajustez selon votre structure de base de données
                 }
-                $sql = "SELECT * FROM amis WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'";
+                $sql = "SELECT * FROM Relation WHERE Nom LIKE '%$searchTerm%' OR Prenom LIKE '%$searchTerm%'"; //changer sql
                 $result = mysqli_query($db_handle, $sql);
                 if ($result) {
                     while ($data = mysqli_fetch_assoc($result)) {
