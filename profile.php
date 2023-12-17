@@ -43,15 +43,15 @@ LEFT JOIN
 LEFT JOIN 
     competence_interet_langue cil ON cv.ID_CV = cil.ID_CV
 WHERE
-u.user = '$user'"; // Asegúrate de que 'user' sea el campo correcto en la tabla Utilisateur
+u.user = '$user'"; 
 
 $result = mysqli_query($db_handle, $query);
 
 if ($result) {
     $user_data = mysqli_fetch_assoc($result);
-    // Aquí puedes trabajar con los datos de $user_data
+    
 } else {
-    // Manejo de error en caso de que la consulta falle
+  
     echo "Error: " . mysqli_error($db_handle);
 }
 
@@ -73,7 +73,7 @@ if ($result) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="css\profile.css">
-    <!-- Add your CSS link here -->
+    
 </head>
 <body>
   <div id="wrapper">
@@ -174,7 +174,7 @@ if ($result) {
     </div>
 
   <div id="header">
-    <!-- Placeholder for Profile Image -->
+   
     <div id="profile-picture">
         <?php 
         if (isset($user_data['Photo']) && !empty($user_data['Photo'])) {
@@ -185,7 +185,7 @@ if ($result) {
         }
         ?>
     </div>
-    <!-- Placeholder for User Full Name -->
+    
     <h1>
         <?php 
         if (isset($user_data['Nom']) && isset($user_data['Prenom'])) {
@@ -219,10 +219,10 @@ if ($result) {
         <label>Biographie:</label>
         <?php echo isset($user_data['Biographie']) ? $user_data['Biographie'] : ''; ?><br>
     </div>
-            <!-- Add more fields based on the user_data array -->
+          
 
 
-           <!-- Education Section -->
+      
 <section id="education">
     <h2>Formation / Education</h2>
     <?php 
@@ -237,7 +237,6 @@ if ($result) {
     ?>
 </section>
 
-<!-- Experience Section -->
 <section id="experience">
     <h2>Expériences / Stages</h2>
     <?php 
@@ -253,7 +252,7 @@ if ($result) {
     ?>
 </section>
 
-<!-- Projects Section -->
+
 <section id="projects">
     <h2>Projets</h2>
     <?php 
@@ -267,11 +266,7 @@ if ($result) {
 </section>
 
 
-            
-          
-
-
-            <!-- Skills Section -->
+        
             <section id="skills">
                 <h2>Compétences</h2>
                 <div class="skills-entry">
@@ -281,7 +276,7 @@ if ($result) {
                 </div>
             </section>
 
-            <!-- Languages Section -->
+          
             <section id="languages">
                 <h2>Langues</h2>
                 <div class="languages-entry">
@@ -291,7 +286,7 @@ if ($result) {
                 </div>
             </section>
 
-            <!-- Interests Section -->
+           
             <section id="interests">
                 <h2>Intérêt</h2>
                 <div class="interests-entry">
