@@ -19,17 +19,17 @@
 			<div class="col-sm-12 text-center"><img src="../img/logo/logo_acceuil.png" height="300" width="auto"></div>
 		</div>
 		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin: 100px;">
-			<form action="#" method="post">
+			<form action="authentification.php" method="post">
 				<div class="row mb-3">
-					<label for="inputEmail" class="col-sm-2 col-form-label">User</label>
+					<label for="inputUser" class="col-sm-2 col-form-label">User</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputEmail">
+						<input type="text" class="form-control" id="inputUser" name="user">
 					</div>
 				</div>
 				<div class="row mb-3">
 					<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="inputPassword">
+						<input type="password" class="form-control" id="inputPassword" name="password">
 						<a href="#" class="text-right"><small>forgot password?</small></a>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 				<hr class="hr"/>
 				If you don't have already an account:
 				<div class="d-grid gap-2">
-					<button class="btn btn-primary" type="button"><a href="#" class="link-body-light link-light link-underline-opacity-0">Sign up</a></button>
+					<button class="btn btn-primary" type="button"><a href="signup.php" class="link-body-light link-light link-underline-opacity-0">Sign up</a></button>
 				</div>
 			</div>
 		</div>
