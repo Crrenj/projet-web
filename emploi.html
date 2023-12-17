@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="emploi.css" rel="stylesheet" type="text/css" />
+	<title>Emploi</title>
+</head>
+<body>
+<header>
+        <h3>ECE In : Social Media Professionnel de l'ECE Paris</h3>
+        <h3>Emploi</h3>
+        <img src="ecelinkedin.jpg" width="140" height="150" class="logo"></img>
+    </header>
 
+    <section>
+    	 <h3 class="emploi"><u>Offres d'emploi</u></h3>
+    	 <div class="offreemploi" id="offreemploi">
+    	 	<li><h5>'Nom de l'entreprise'</h5>
+    	 	<p>Vous avez une nouvelle offre d'emploi en tant que [fonction] d'une durée de [durée du poste].<br>
+    	 	salaire=2900€/mois net</p>
+    	 	<button id="voirOffre" class="voirOffre" onclick="voirOffreEmploi1()">postuler</button>
+    	 	<button id="declinerOffre" class="declinerOffre" onclick="declinerOffre()">pas interessé</button>
+    	 </li>
+
+    	 	<li><h5>'Nom de l'entreprise'</h5>
+    	 	<p>Vous avez une nouvelle offre d'emploi en tant que [fonction] d'une durée de [durée du poste].<br>
+    	 	salaire=2700€/mois net</p>
+    	 	<button id="voirOffre" class="voirOffre" onclick="voirOffreEmploi2()">postuler</button>
+    	 	<button id="declinerOffre" class="declinerOffre" onclick="declinerOffre()">pas interessé</button></li>
+    	 </div>
+<br>
+<hr>
+
+    	 <h3 class="emploi"><u>Offres de stage</u></h3>
+    	 <div class="offrestage" id="offrestage">
+    	 	<li><h5>'Nom de l'entreprise'</h5>
+    	 	<p>Vous avez une nouvelle offre de stage au poste [nom du service] d'une durée de [durée]. Cette entreprise propose un CDI à l'issue de ce stage.<br>
+    	 	<button id="voirOffre" class="voirOffre" onclick="voirOffre()">postuler</button>
+    	 	<button id="declinerOffre" class="declinerOffre" onclick="declinerOffre()">pas interessé</button>
+    	 </li>
+
+    	 <li><h5>'Nom de l'entreprise'</h5>
+    	 	<p>Vous avez une nouvelle offre de stage au poste [nom du service] d'une durée de [durée]. Cette entreprise propose un CDI à l'issue de ce stage.<br>
+    	 	<button id="voirOffre" class="voirOffre" onclick="voirOffre()">postuler</button>
+    	 	<button id="declinerOffre" class="declinerOffre" onclick="declinerOffre()">pas interessé</button>
+    	 </li>
+    	 </div>
+
+
+<script>
+    function voirOffreEmploi1() {
+        var div = document.getElementById('voirOffre');
+
+        div.innerHTML = 'https://www.linkedin.com/home/?originalSubdomain=fr';
+    }
+</script>
+<script>
+    function voirOffreEmploi2() {
+        var div = document.getElementById('voirOffre');
+
+        div.innerHTML = 'https://www.linkedin.com/home/?originalSubdomain=fr';
+    }
+</script>
+
+
+    </section>
+</body>
+</html>
