@@ -13,6 +13,10 @@
         .wrapper {
             display: grid;
             grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
         }
         header {
             grid-area: header;
