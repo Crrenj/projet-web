@@ -3,20 +3,33 @@
 
 }
 
+#carousel {
+	margin: 30px;
+}
+
 #event{
 	align-content: center;
 
 }
 
 #event_friend {
-	margin: 20px;
+	margin: 50px;
+
 }
 
 #event_perso {
-	margin: 20px;
+	margin: 50px;
 }
 
 #Google-contact {
 	align-content: center;
-	margin: 20px;
+	margin: 50px;
+}
+
+#description {
+	margin: 50px;
+}
+
+#partenaire {
+	margin: 50px;
 }
