@@ -19,40 +19,40 @@
 		</div>
 		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin: 50px">
 			<div class="row g-3">
-				<form action="authentification.php" method="post">
+				<form action="confirm_signup.php" method="post">
 					<div class="col-md-6" >
-						<label for="inputUser" class="form-label">Username</label>
-						<input type="text" class="form-control" id="inputUser">
+						<label for="user" class="form-label">Username</label>
+						<input type="text" class="form-control" id="user" name="user">
 					</div>
 					<div class="col-md-6">
-						<label for="inputPassword" class="form-label">Password</label>
-						<input type="password" class="form-control" id="inputPassword">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" class="form-control" id="password" name="password">
 					</div>
 					<div class="col-md-6">
-						<label for="inputPasswordcon" class="form-label">Confirm password</label>
-						<input type="password" class="form-control" id="inputPasswordcon">
+						<label for="passwordcon" class="form-label">Confirm password</label>
+						<input type="password" class="form-control" id="passwordcon" name="passwordcon">
 					</div>
 					<div class="col-12">
-						<label for="inputEmail" class="form-label">Email</label>
-						<input type="email" class="form-control" id="inputEmail" placeholder="exemple@email.com">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="exemple@email.com" name="email">
 					</div>
 					<div class="row">
 						<div class="col">
 							<label for="firstname" class="form-label">First Name</label>
-							<input type="text" class="form-control" id="firstname">
+							<input type="text" class="form-control" id="firstname" name="firstname">
 						</div>
 						<div class="col">
 							<label for="lastname" class="form-label">Last Name</label>
-							<input type="text" class="form-control" id="lastname">
+							<input type="text" class="form-control" id="lastname" name="lastname">
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="inputCity" class="form-label">City</label>
-						<input type="text" class="form-control" id="inputCity">
+						<label for="city" class="form-label">City</label>
+						<input type="text" class="form-control" id="city" name="city">
 					</div>
 					<div class="col-md-4">
-						<label for="inputStatut" class="form-label">Statut</label>
-						<select id="inputStatut" class="form-select">
+						<label for="statut" class="form-label">Statut</label>
+						<select id="statut" class="form-select" name="statut">
 							<option selected>Choose...</option>
 							<option>Ingénieur</option>
 							<option>Professeur</option>

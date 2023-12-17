@@ -14,11 +14,11 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <body style="background-color: #1f5477; height: 100%;">
-	<div id="wrapper" class="container-fluid">
+	<div id="wrapper" class="container">
 		<div class="row" style="margin: 20px;">
 			<div class="col-sm-12 text-center"><img src="../img/logo/logo_acceuil.png" height="300" width="auto"></div>
 		</div>
-		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin: 100px;">
+		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded">
 			<form action="authentification.php" method="post">
 				<div class="row mb-3">
 					<label for="inputUser" class="col-sm-2 col-form-label">User</label>

@@ -50,7 +50,7 @@
 		<div class="row" style="margin: 20px;">
 			<div class="col-sm-12 text-center"><img src="../img/logo/logo_acceuil.png" height="300" width="auto"></div>
 		</div>
-		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin: 100px;">
+		<div class="container-sm shadow-lg p-3 mb-5 bg-body-tertiary rounded">
 			<?php
 				switch ($choix) {
 					case 'noUser':
