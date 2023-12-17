@@ -309,6 +309,57 @@ if ($result) {
         </form>
     </div>
   </div>
+<footer class="container-fluid bg-dark">
+			<div class="container py-4 py-md-5 px-4 px-md-3 text-light-emphasis">
+				<div class="row px-4 py-4">
+					<div class="col">
+						<img src="img/logo/LOGO.png" width="150" height="auto">
+					</div>
+					<div class="col">
+						<h5>Aide</h5>
+						<ul class="list-unstyled">
+							<li>email:henri.lantigua@edu.fr</li>
+							<li>tel:06 XX XX XX XX</li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Formulaire d'aide</a></li>
+						</ul>
+					</div>
+					<div class="col">
+						<h5>Nos réseaux sociaux</h5>
+						<ul class="list-unstyled">
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-instagram"></i> Instagram</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-twitter-x"></i> tweeter/X</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-facebook"></i> Facebook</a></li>
+						</ul>
+					</div>
+					<div class="col">
+						<h5>Links</h5>
+						<ul class="list-unstyled">
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Acceuil</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Profil</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Messagerie</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Notification</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Publication</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Emploi</a></li>
+							<li><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Amis</a></li>
+						</ul>
+					</div>
+					<div class="col">
+						<h5>Auteur</h5>
+						<ul class="list-unstyled">
+							<p>
+								Henri Lantigua Jorge
+								Claudia Andrea Sotomayor Michuy
+								Piriya
+								Sami
+							</p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+    
 </body>
 </html>
 
