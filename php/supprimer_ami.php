@@ -3,13 +3,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['delete'])) {
         $id = $_POST['id'];
 
-        $database = "Mon Réseau";
+        $database = "database";
         $db_handle = mysqli_connect('localhost', 'root', 'root', $database, 8889);
 
         if ($db_handle) {
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found) {
-                $sql = "DELETE FROM amis WHERE ID = '$id'";
+                $sql = "DELETE FROM Relation WHERE ID_Utilisateur1 = '$id'";
                 $result = mysqli_query($db_handle, $sql);
 
                 if ($result) {
@@ -27,5 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-header("Location: reseau.php"); // Redirigez vers la page réseau après la suppression
+header("Location: reseau.php"); 
 ?>
