@@ -1,25 +1,85 @@
+<?php
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$user = $_SESSION['user'];
+$admin = $_SESSION['admin'];
+
+
+$database = "database";
+$db_handle = mysqli_connect('localhost', 'root', 'root', $database, 8889);
+if (!$db_handle) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$db_found = mysqli_select_db($db_handle, $database);
+if (!$db_found) {
+    die("Database selection failed: " . mysqli_error($db_handle));
+}
+
+$query = "
+SELECT 
+    u.*, 
+    p.Photo, 
+    b.Nom, b.Prenom, b.Statut, b.Localisation, b.Telephone, b.Email, b.Biographie,
+    cv.TitreCV,
+    e.Entreprise, e.Poste, e.Description AS ExpDescription, e.DateDebut AS ExpDateDebut, e.DateFin AS ExpDateFin,
+    ed.Etablissement, ed.Diplome, ed.DateDebut AS EduDateDebut, ed.DateFin AS EduDateFin,
+    cil.Competence, cil.Interet, cil.Langue
+FROM 
+    utilisateur u
+JOIN 
+    profil p ON u.ID_Utilisateur = p.ID_Utilisateur
+JOIN 
+    bio b ON u.ID_Utilisateur = b.ID_Utilisateur
+JOIN 
+    cv cv ON u.ID_Utilisateur = cv.ID_Utilisateur
+LEFT JOIN 
+    experience e ON cv.ID_CV = e.ID_CV
+LEFT JOIN 
+    education ed ON cv.ID_CV = ed.ID_CV
+LEFT JOIN 
+    competence_interet_langue cil ON cv.ID_CV = cil.ID_CV
+WHERE
+u.user = '$user'"; // Asegúrate de que 'user' sea el campo correcto en la tabla Utilisateur
+
+$result = mysqli_query($db_handle, $query);
+
+if ($result) {
+    $user_data = mysqli_fetch_assoc($result);
+    // Aquí puedes trabajar con los datos de $user_data
+} else {
+    // Manejo de error en caso de que la consulta falle
+    echo "Error: " . mysqli_error($db_handle);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vous</title>
+    <meta charset="UTF-8">
+    <title>Profil Utilisateur</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
- 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bibliothèque jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  
+  <!-- Dernier JavaScript compilé -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="profile.css">
-  <script src="profile.js"></script>
+
+    <link rel="stylesheet" href="css\profile.css">
+    <!-- Add your CSS link here -->
 </head>
 <body>
+  <div id="wrapper">
 
-  !-- NAVIGATION -->
-  
-<div class="navbar data-bs-theme='dark' bg-body-tertiary">
+
+  <div class="navbar data-bs-theme='dark' bg-body-tertiary">
       <nav class="navbar navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -113,194 +173,148 @@
       </nav>
     </div>
 
-
-
-<!-- Partie profile images -->
-<div class="header">
-  <div class="banner" onclick="document.getElementById('bannerInput').click();">
-    <div class="edit-overlay">Cliquez pour modifier</div>
-  </div>
-  <div class="profile-pic-container" onclick="document.getElementById('profileInput').click();">
-    <img src="path_to_profile_pic.jpg" alt="Perfil" class="profile-pic">
-    <div class="edit-overlay">Cliquez pour modifier</div>
-  </div>
-  <div class="name">
-    <span class="name-text">NOM COMPLET</span>
-    <i class="fas fa-pencil-alt edit-name-icon"></i>
-  </div>
-</div>
-
-<!-- Popups-->
-<div class="popup" id="editNamePopup">
-  <input type="text" id="nameInput"> 
-  <button onclick="saveName();">Enregistrer</button>
-  <button onclick="hideEditNamePopup();">Annuler</button>
-</div>
-
-
-
-
-<!-- Partie d information general -->
-
-<div class="formulario-general">
-  <div class="iconos">
-    <img src="img/tres-puntos.png" alt="Más opciones" title="Más opciones" class="icono-tres-puntos">
-    <img src="img/lapiz.png" alt="Editar" title="Editar" class="editar" style="display:none;">
-    <img src="img/candado.png" alt="Seguridad" title="Seguridad" class="seguridad" style="display:none;">
-  </div>
-  
-  
-  <div class="campo">
-    <label>statut</label>
-    <span id="statut">écrire statut</span>
-  </div>
-  <div class="campo">
-    <label>localisation</label>
-    <span id="localisation">écrire localisation</span>
-  </div>
-  <div class="campo">
-    <label>email</label>
-    <span id="email">écrire email</span>
-  </div>
-  <div class="campo">
-    <label>téléphone</label>
-    <span id="telephone">écrire téléphone</span>
-  </div>
-  <div class="campo">
-    <label>description</label>
-    <span id="description">écrire description</span>
-  </div>
-</div>
-
-
-<div id="popup-editar">
-  <form id="formulario-editar">
-    <div class="form-field">
-    <label for="statut">Statut:</label>
-    <input type="text" id="statut" name="statut" placeholder="Écrire statut">
-</div>
-<div class="form-field">
-    <label for="localisation">Localisation:</label>
-    <input type="text" id="localisation" name="localisation" placeholder="Écrire localisation">
-</div>
-<div class="form-field">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Écrire email">
-</div>
-<div class="form-field">
-    <label for="telephone">Téléphone:</label>
-    <input type="tel" id="telephone" name="telephone" placeholder="Écrire téléphone">
-</div>
-<div class="form-field">
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" placeholder="Écrire description" rows="10"></textarea>
-</div>
-    <button type="submit">Guardar</button>
-    <button type="button" id="cancelar-editar">Cancelar</button>
-  </form>
-</div>
-
-
-<div id="popup-seguridad">
-  <ul>
-    <li data-privacidad="vous">Vous</li>
-    <li data-privacidad="amies">Amies</li>
-    <li data-privacidad="public">Public</li>
-  </ul>
-  <button type="button" id="cancelar-seguridad">Cancelar</button>
-</div>
-
-
-
-<!-- Partie d information profesional -->
-  
-<div class="general">
-<div class="information-section">
-
-    
-    <div class="main-sections">
-       
-        <div class="section">
-            <div class="section-title">Expériences / stages</div>
-            <div class="section-body" id="experience"></div>
-        </div>
-        <div class="section">
-            <div class="section-title">Formation / education</div>
-            <div class="section-body" id="education"></div>
-        </div>
-        <div class="section">
-            <div class="section-title">Projet</div>
-            <div class="section-body" id="project"></div>
-        </div>
+  <div id="header">
+    <!-- Placeholder for Profile Image -->
+    <div id="profile-picture">
+        <?php 
+        if (isset($user_data['Photo']) && !empty($user_data['Photo'])) {
+            echo '<img src="' . $user_data['Photo'] . '" alt="Photo de profil">';
+        } else {
+            // Ruta a la imagen de perfil predeterminada
+            echo '<img src="path_to_default_profile_picture.jpg" alt="Photo de profil par défaut">';
+        }
+        ?>
     </div>
-    <div class="sidebar">
-        <div class="sidebar-section">
-            <div class="sidebar-title">compétences</div>
-            <div class="sidebar-body" id="skills"></div>
-        </div>
-        <div class="sidebar-section">
-            <div class="sidebar-title">langues</div>
-            <div class="sidebar-body" id="languages"></div>
-        </div>
-        <div class="sidebar-section">
-            <div class="sidebar-title">intérêt</div>
-            <div class="sidebar-body" id="interests"></div>
-        </div>
-</div>
-</div>
-<div class="edit-icons">
-  <img src="img/tres-puntos.png" alt="Más opciones" class="more-options-icon" onclick="toggleIcons()">
-  <img src="img/lapiz.png" alt="Editar" class="edit-icon" onclick="showEditPopup()">
-  <img src="img/candado.png" alt="Privacidad" class="privacy-icon" onclick="showPrivacyPopup()">
+    <!-- Placeholder for User Full Name -->
+    <h1>
+        <?php 
+        if (isset($user_data['Nom']) && isset($user_data['Prenom'])) {
+            echo $user_data['Nom'] . ' ' . $user_data['Prenom'];
+        } else {
+            echo 'Nom et prénom non disponibles';
+        }
+        ?>
+    </h1>
 </div>
 
-<div class="popup" id="edit-information-popup">
-  <div>
-    <label for="experience-edit">Expériences / stages:</label>
-    <textarea id="experience-edit" rows="4"></textarea>
-  </div>
-  <div>
-    <label for="education-edit">Formation / education:</label>
-    <textarea id="education-edit" rows="4"></textarea>
-  </div>
-  <div>
-    <label for="project-edit">Projet:</label>
-    <textarea id="project-edit" rows="4"></textarea>
-  </div>
-  <div>
-    <label for="skills-edit">compétences:</label>
-    <textarea id="skills-edit" rows="2"></textarea>
-  </div>
-  <div>
-    <label for="languages-edit">langues:</label>
-    <textarea id="languages-edit" rows="2"></textarea>
-  </div>
-  <div>
-    <label for="interests-edit">intérêt:</label>
-    <textarea id="interests-edit" rows="2"></textarea>
-  </div>
-  <button onclick="saveInformation()">Guardar</button>
-  <button onclick="closePopup('edit-information-popup')">Cancelar</button>
-</div>
+<div id="main">
+    <div class="field">
+        <label>Statut:</label>
+        <?php echo isset($user_data['Statut']) ? $user_data['Statut'] : ''; ?><br>
+    </div>
+    <div class="field">
+        <label>Localisation:</label>
+        <?php echo isset($user_data['Localisation']) ? $user_data['Localisation'] : ''; ?><br>
+    </div>
+    <div class="field">
+        <label>Email:</label>
+        <?php echo isset($user_data['Email']) ? $user_data['Email'] : ''; ?><br>
+    </div>
+    <div class="field">
+        <label>Téléphone:</label>
+        <?php echo isset($user_data['Telephone']) ? $user_data['Telephone'] : ''; ?><br>
+    </div>
 
-<div class="popup" id="privacy-information-popup">
-  <form id="privacy-form">
-    <input type="radio" id="private" name="privacy" value="private">
-    <label for="private">Vous</label><br>
-    <input type="radio" id="friends" name="privacy" value="friends">
-    <label for="friends">Amies</label><br>
-    <input type="radio" id="public" name="privacy" value="public" checked>
-    <label for="public">Public</label><br>
-    <button type="button" onclick="savePrivacy()">Guardar</button>
-    <button type="button" onclick="closePopup('privacy-information-popup')">Cancelar</button>
-  </form>
-</div>
-
-<input type="file" id="bannerInput" style="display: none;">
-<input type="file" id="profileInput" style="display: none;">
+            <div class="field">
+        <label>Biographie:</label>
+        <?php echo isset($user_data['Biographie']) ? $user_data['Biographie'] : ''; ?><br>
+    </div>
+            <!-- Add more fields based on the user_data array -->
 
 
+           <!-- Education Section -->
+<section id="education">
+    <h2>Formation / Education</h2>
+    <?php 
+    if (isset($user_education) && is_array($user_education)) {
+        foreach ($user_education as $education) {
+            echo "Diplôme: " . $education['diplome'] . "<br>";
+            echo "Établissement: " . $education['etablissement'] . "<br>";
+            echo "Date de début: " . $education['DateDebut'] . "<br>";
+            echo "Date de fin: " . $education['DateFin'] . "<br><br>";
+        }
+    } 
+    ?>
+</section>
 
+<!-- Experience Section -->
+<section id="experience">
+    <h2>Expériences / Stages</h2>
+    <?php 
+    if (isset($user_experience) && is_array($user_experience)) {
+        foreach ($user_experience as $experience) {
+            echo "Poste: " . $experience['poste'] . "<br>";
+            echo "Entreprise: " . $experience['entreprise'] . "<br>";
+            echo "Description: " . $experience['description'] . "<br>";
+            echo "Date de début: " . $experience['DateDebut'] . "<br>";
+            echo "Date de fin: " . $experience['DateFin'] . "<br><br>";
+        }
+    }
+    ?>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projets</h2>
+    <?php 
+    if (isset($user_projects) && is_array($user_projects)) {
+        foreach ($user_projects as $project) {
+            echo "Titre du projet: " . $project['Titre'] . "<br>";
+            echo "Description: " . $project['Description'] . "<br><br>";
+        }
+    }
+    ?>
+</section>
+
+
+            
+          
+
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>Compétences</h2>
+                <div class="skills-entry">
+                    <?php if (isset($user_data['Compétence'])) {
+                        echo "Compétences: " . $user_data['Compétence'] . "<br>";
+                    } ?>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages">
+                <h2>Langues</h2>
+                <div class="languages-entry">
+                    <?php if (isset($user_data['Langue'])) {
+                        echo "Langues: " . $user_data['Langue'] . "<br>";
+                    } ?>
+                </div>
+            </section>
+
+            <!-- Interests Section -->
+            <section id="interests">
+                <h2>Intérêt</h2>
+                <div class="interests-entry">
+                    <?php if (isset($user_data['Interet'])) {
+                        echo "Intérêts: " . $user_data['Interet'] . "<br>";
+                    } ?>
+                </div>
+            </section>
+
+
+            <form action="update_profile.php" method="post">
+              <button type="submit">Modifier le profil</button>
+            </form>
+
+            <form action="generate_cv.php" method="post">
+              <button type="submit">Générer le CV</button>
+            </form>
+
+
+        </form>
+    </div>
+  </div>
 </body>
 </html>
+
 
