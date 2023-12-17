@@ -25,11 +25,24 @@ mysqli_close($db_handle);
 
 $db_found = mysqli_select_db($db_handle, $database);
 
-if(?)
+//remplir la phrase en cas de demande d'ami (la derniere demande d'ami reçu)
 
-$sql = "SELECT utilisateur.Nom, utilisateur.Prenom, notification.Contenu, notification.type
-            FROM Utilisateur
-            JOIN notification ON demande_ami.ID_Expéditeur = utilisateur.ID_Utilisateur
-            WHERE type=demandeAmi";
+$sql = "SELECT utilisateur.Nom, utilisateur.Prenom
+        FROM utilisateur
+        INNER JOIN notification ON utilisateur.ID_Utilisateur = notification.ID_Utilisateur
+        WHERE notification.type = 'demande_ami'
+        ORDER BY notification.DateHeure DESC;"
 
+$resultat = mysqli_query($db_handle, $sql);
+
+if ($resultat && mysqli_num_rows($resultat) > 0) {
+    $row = mysqli_fetch_assoc($resultat);
+
+    echo json_encode($row);
+} else {
+    echo "Aucune demande d'ami";
+}
+
+// Fermeture de la connexion MySQLi
+mysqli_close($db_handle);
 ?>
