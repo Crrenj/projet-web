@@ -21,6 +21,9 @@
             margin-bottom: 10px;
             border-radius: 10px;
             background-color: #C0DCC0;
+            text-align: center;
+            width: 900px;
+            margin: 0 auto;
         }
 
         .message {
@@ -29,6 +32,9 @@
             margin-bottom: 10px;
             border-radius: 10px;
             background-color: #C0DCC0;
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
         }
 
         .demande {
@@ -37,7 +43,9 @@
             margin-bottom: 10px;
             border-radius: 10px;
             background-color: #C0DCC0;
-
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
         }
 
             font-family: Arial, sans-serif;
@@ -85,6 +93,7 @@
         
         .demandeami{
             color : #005050;
+            text-align: center;
         }
         .accepter{
             color : #008000;
@@ -97,8 +106,10 @@
         }
         .boite{
             color :#005050;
+            text-align: center;
         }
         .evenements{
             color :#005050;
+            text-align: center;
         }
     </style>
