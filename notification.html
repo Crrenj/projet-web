@@ -14,6 +14,8 @@
     </header>
     <section>
 
+//demandes d'ami-----------------------------------------------------------------------------------------------
+
         <h3 class="demandeami"><u>Demande d'ami</u></h3>
         <div class="demande" id="demande">
             <img src="profil.jpg" alt="Photo de profil">
@@ -26,22 +28,51 @@
         window.location.href = "monreseau.html";
     }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupération du bouton
+    var demandeAmiBtn = document.getElementById('demandeAmiBtn');
+
+    // Ajout d'un écouteur d'événement pour le clic sur le bouton
+    demandeAmiBtn.addEventListener('click', function () {
+        // Exemple de requête Ajax avec la bibliothèque fetch
+        fetch('votre_script_php.php', {
+            method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Afficher le message dans la div
+            document.getElementById('message').innerHTML = "Vous avez une demande d'ami de " + data.Nom + " " + data.Prenom;
+        })
+        .catch(error => {
+            console.error('Erreur lors de la demande d\'ami:', error);
+        });
+    });
+});
+</script>
         </div>
         <br>
 
+
+//messages-----------------------------------------------------------------------------------------------------
             <h3 class="boite"><u>Boîte de réception</u></h3>
         <div class="message">
             <p>Vous avez reçu un message de [nom] [prénom] : [contenu]<br>
                 <button id="Répondre" class="Répondre" onclick="redirigerVersMessagerieAmi">Répondre</button>
                 <button id="voirToutLesMessages" class="voirToutLesMessages" onclick="redirigerVersMessagerie()">Voir tous les messages</button>
-<script>
-    function redirigerVersMessagerie() {
-        window.location.href = "messagerie.html";
+<script>  function redirigerVersMessagerie() {
+    
+        var urlMessagerie = "messagerie.html";
+
+        window.location.href = urlMessagerie;
     }
 </script>
+
         </div>
         <br>
 
+
+//evenements---------------------------------------------------------------------------------------------------
             <h3 class="evenements"><u>Evenements</u></h3>
         <div class="event" id="event">
             <img src="ecejpo.jpg" width="170" height="100" class="ecejpo"></img>
@@ -68,15 +99,6 @@
         div.innerHTML = '';
     }
 </script>
-
-<script>  function redirigerVersMessagerie() {
-    
-        var urlMessagerie = "messagerie.html";
-
-        window.location.href = urlMessagerie;
-    }
-</script>
-
 
 </body>
 </html>
