@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : sam. 16 déc. 2023 à 20:03
+-- Généré le : dim. 17 déc. 2023 à 16:40
 -- Version du serveur : 5.7.39
 -- Version de PHP : 7.4.33
 
@@ -262,16 +262,20 @@ CREATE TABLE `Relation` (
 CREATE TABLE `Utilisateur` (
   `ID_Utilisateur` int(11) NOT NULL,
   `MotDePasse` varchar(255) DEFAULT NULL,
-  `DateInscription` date DEFAULT NULL
+  `DateInscription` date DEFAULT NULL,
+  `Admin` tinyint(1) NOT NULL,
+  `user` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `Utilisateur`
 --
 
-INSERT INTO `Utilisateur` (`ID_Utilisateur`, `MotDePasse`, `DateInscription`) VALUES
-(1, 'password123', '2023-01-01'),
-(2, 'password456', '2023-01-02');
+INSERT INTO `Utilisateur` (`ID_Utilisateur`, `MotDePasse`, `DateInscription`, `Admin`, `user`) VALUES
+(1, 'password123', '2023-01-01', 0, ''),
+(2, 'password456', '2023-01-02', 0, ''),
+(3, '123', NULL, 1, 'Crrenj'),
+(4, 'ilikemondays', '2023-12-17', 0, 'Clau');
 
 --
 -- Index pour les tables déchargées
@@ -467,7 +471,7 @@ ALTER TABLE `Publication`
 -- AUTO_INCREMENT pour la table `Utilisateur`
 --
 ALTER TABLE `Utilisateur`
-  MODIFY `ID_Utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_Utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
