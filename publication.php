@@ -64,7 +64,7 @@
 				    <a class="nav-link" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="notifications.php"><i class="bi bi-bell-fill"></i> Notification</a>
+				    <a class="nav-link" href="notification.html"><i class="bi bi-bell-fill"></i> Notification</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link active" href="publication.php"><i class="bi bi-journal-album"></i> Publication</a>

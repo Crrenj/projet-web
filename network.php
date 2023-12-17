@@ -18,12 +18,7 @@
             font-family: Arial, sans-serif;
         }
         .wrapper {
-            display: grid;
-            grid-template-areas:
-      "header header header"
-      "nav nav nav"
-      "main main main"
-      "footer footer footer";
+
         }
         header {
             grid-area: header;
@@ -91,13 +86,13 @@
 
                 <ul class="nav nav-pills nav-fill navbar-left">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
+                    <a class="nav-link" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
+                    <a class="nav-link active" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="emploi.html"><i class="bi bi-backpack3"></i> Emplois</a>

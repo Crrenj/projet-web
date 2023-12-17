@@ -32,7 +32,7 @@
 
 			    <ul class="nav nav-pills nav-fill navbar-left">
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
+				    <a class="nav-link " aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
@@ -44,7 +44,7 @@
 				    <a class="nav-link" href="emploi.html"><i class="bi bi-backpack3"></i> Emplois</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
+				    <a class="nav-link active" href="messaging.php"><i class="bi bi-chat-right-dots-fill"></i> Messagerie</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="notification.html"><i class="bi bi-bell-fill"></i> Notification</a>
