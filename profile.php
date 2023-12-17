@@ -88,10 +88,10 @@ if ($result) {
 
           <ul class="nav nav-pills nav-fill navbar-left">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
+            <a class="nav-link" aria-current="page" href="index.php"><i class="bi bi-house-fill"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
+            <a class="nav-link active" href="profile.php"><i class="bi bi-person-fill"></i> Profil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="network.php"><i class="bi bi-people-fill"></i> Amis</a>
