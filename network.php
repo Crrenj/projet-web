@@ -213,7 +213,7 @@
                         echo "</a>";
                         echo "<div>";
                         echo "<p>" . $data['ID_Utilisateur1'] . "</p>";
-                        echo "<p>" . $data['Description'] . "</p>";
+                        echo "<p>" . $data['Statut'] . "</p>";
                         echo "<form method='post' action='supprimer_ami.php'>";
                         echo "<input type='hidden' name='id' value='" . $data['ID_Utilisateur1'] . "'>";
                         echo "<button type='submit' name='delete'>Supprimer cet ami</button>";
