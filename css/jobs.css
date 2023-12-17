@@ -1,0 +1,44 @@
+header {
+            text-align: center;
+            background-color: #C0DCC0;
+            padding: 10px;
+            color: #408080;
+            font-size: 20px;
+            width: 70%
+            text-align: center;
+        }
+
+.offreemploi{
+            border: 1.4px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: #C0DCC0;
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
+        }
+.emploi{
+            color : #005050;
+            text-align: center;
+        }
+.logo {
+            max-width: 100%; /* Assure que l'image ne dépasse pas de son conteneur */
+            height: auto; /* Maintient le rapport hauteur/largeur de l'image */
+            position: fixed; /* La position de l'image est fixée par rapport à la fenêtre du navigateur */
+            top: 40px; /* Distance du haut de la page */
+            right: 40px; /* Distance du côté droit de la page */
+        }
+        .offrestage{
+            border: 1.4px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: #C0DCC0;
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
+
+        h5 {
+    margin-top: 0;
+}
