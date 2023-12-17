@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : dim. 17 déc. 2023 à 17:38
+-- Généré le : dim. 17 déc. 2023 à 20:58
 -- Version du serveur : 5.7.39
 -- Version de PHP : 7.4.33
 
@@ -237,8 +237,31 @@ CREATE TABLE `Publication` (
   `DateHeure` datetime DEFAULT NULL,
   `Contenu` text,
   `Image` varchar(255) DEFAULT NULL,
-  `Type` varchar(255) DEFAULT NULL
+  `Type` varchar(255) DEFAULT NULL,
+  `user` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Publication`
+--
+
+INSERT INTO `Publication` (`ID_Publication`, `ID_Utilisateur`, `DateHeure`, `Contenu`, `Image`, `Type`, `user`) VALUES
+(7, NULL, '2023-03-01 10:00:00', 'Première publication de test', NULL, 'publication', 'crrenj'),
+(8, NULL, '2023-03-01 11:00:00', 'Seconde publication avec image', 'chemin/vers/image1.jpg', 'album', 'clau'),
+(9, NULL, '2023-03-02 09:30:00', 'Troisième publication de test', NULL, 'publication', 'crrenj'),
+(10, NULL, '2023-03-02 15:45:00', 'Quatrième publication avec image', 'chemin/vers/image2.jpg', 'album', 'clau'),
+(11, NULL, '2023-03-03 12:00:00', 'Cinquième publication de test', NULL, 'publication', 'clau'),
+(12, NULL, '2023-03-04 14:00:00', 'Une autre publication avec image', 'chemin/vers/image3.jpg', 'album', 'clau'),
+(13, NULL, '2023-03-01 10:00:00', 'Première publication de test', NULL, 'publication', 'Crrenj'),
+(14, NULL, '2023-03-01 11:00:00', 'Seconde publication avec image', 'chemin/vers/image1.jpg', 'album', 'clau'),
+(15, NULL, '2023-03-02 09:30:00', 'Troisième publication de test', NULL, 'publication', 'Crrenj'),
+(16, NULL, '2023-03-02 15:45:00', 'Quatrième publication avec image', 'chemin/vers/image2.jpg', 'album', 'Crrenj'),
+(17, NULL, '2023-03-03 12:00:00', 'Cinquième publication de test', NULL, 'publication', 'clau'),
+(18, NULL, '2023-03-04 14:00:00', 'Une autre publication avec image', 'chemin/vers/image3.jpg', 'album', 'clau'),
+(19, 3, '2023-12-17 00:00:00', 'excurtion', 'img/carousel/fjords.jpg', 'eventschool', ''),
+(20, NULL, NULL, NULL, NULL, NULL, 'Crrenj'),
+(21, 3, '2023-12-17 00:00:00', 'excurtion', 'img/carousel/nature.jpg', 'eventschool', 'Crrenj'),
+(22, 3, '2023-12-17 00:00:00', 'excurtion', 'img/carousel/lights.jpg', 'eventschool', 'Crrenj');
 
 -- --------------------------------------------------------
 
@@ -465,7 +488,7 @@ ALTER TABLE `Projet`
 -- AUTO_INCREMENT pour la table `Publication`
 --
 ALTER TABLE `Publication`
-  MODIFY `ID_Publication` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Publication` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `Utilisateur`
