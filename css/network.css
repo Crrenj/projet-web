@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+header, footer {
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: center;
+    border-bottom: 1px solid #e7e7e7;
+}
+footer {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: none;
+}
+nav {
+    grid-area: nav;
+    padding: 10px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav input, nav button {
+    padding: 5px;
+}
+main {
+    grid-area: main;
+    padding: 10px;
+
+}
+.friend-card {
+    border: 1px solid #e7e7e7;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.friend-card img {
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+    margin-right: 10px;
+}
