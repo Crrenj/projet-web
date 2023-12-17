@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : dim. 17 déc. 2023 à 16:40
+-- Généré le : dim. 17 déc. 2023 à 17:38
 -- Version du serveur : 5.7.39
 -- Version de PHP : 7.4.33
 
@@ -275,7 +275,7 @@ INSERT INTO `Utilisateur` (`ID_Utilisateur`, `MotDePasse`, `DateInscription`, `A
 (1, 'password123', '2023-01-01', 0, ''),
 (2, 'password456', '2023-01-02', 0, ''),
 (3, '123', NULL, 1, 'Crrenj'),
-(4, 'ilikemondays', '2023-12-17', 0, 'Clau');
+(4, 'ilikemondays', '2023-12-17', 1, 'Clau');
 
 --
 -- Index pour les tables déchargées
